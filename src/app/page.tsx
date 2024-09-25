@@ -1,3 +1,4 @@
+"use client"
 import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
@@ -13,19 +14,20 @@ import Particles from "@/components/magicui/particles";
 import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
 import SparklesText from "@/components/magicui/sparkles-text";
 import Ripple from "@/components/magicui/ripple";
-// import { useTheme } from "next-themes";
+import { useTheme } from "next-themes";
 
 const BLUR_FADE_DELAY = 0.4;
 
 export default function Page() {
-  // const {theme} = useTheme()
+  const {theme} = useTheme()
+  // console.log(theme)
   return (
     <main className="flex flex-col items-center justify-center w-full min-h-[100dvh] space-y-10 lg:px-56 xl:px-72">
       {/* <Meteors number={100}/> */}
       <Particles quantity={300}
         className="absolute top-5 h-[90%] w-full"
         ease={80}
-        color={"black"}
+        color={theme == "dark" ? "#ffffff":"black"}
         refresh />
       <section id="hero" className="w-full px-5 py-32 ">
         <div className="w-full flex items-center justify-center space-y-8 lg:mt-28">
