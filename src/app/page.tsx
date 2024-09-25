@@ -20,7 +20,7 @@ const BLUR_FADE_DELAY = 0.4;
 export default function Page() {
   // const {theme} = useTheme()
   return (
-    <main className="flex flex-col items-center justify-center w-full min-h-[100dvh] space-y-10 font-body lg:px-56 xl:px-72">
+    <main className="flex flex-col items-center justify-center w-full min-h-[100dvh] space-y-10 lg:px-56 xl:px-72">
       {/* <Meteors number={100}/> */}
       <Particles quantity={300}
         className="absolute top-5 h-[90%] w-full"
@@ -38,7 +38,7 @@ export default function Page() {
                 text={DATA.description}
               />
             </div>
-            <Ripple className=" md:block w-full"/>
+            <Ripple className="hidden md:block md:w-full"/>
             {/* <BlurFade delay={BLUR_FADE_DELAY} className="flex items-center justify-center">
               <Avatar className="size-28 border ">
                 <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
