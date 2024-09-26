@@ -30,11 +30,7 @@ const BLUR_FADE_DELAY = 0.4;
 
 export default function Page() {
   const { theme } = useTheme()
-
-
-
-
-  // console.log(theme == "dark")
+  console.log(theme)
   return (
     <main className="flex flex-col items-center justify-center w-full min-h-[100dvh] space-y-10 lg:px-56 xl:px-72">
       {/* <Meteors number={100}/> */}
@@ -77,7 +73,7 @@ export default function Page() {
             </span>
           </ShineBorder>
         </BlurFade>
-        <BoxReveal>
+        <BoxReveal boxColor={theme == "dark" ? "white" : "black"}>
           <BlurFade delay={BLUR_FADE_DELAY * 4}>
             <Markdown className="prose max-w-full text-pretty mt-5  text-xl  dark:prose-invert text-justify font-f2 font-medium text-black dark:text-white">
               {DATA.summary}
@@ -99,7 +95,7 @@ export default function Page() {
               </span>
             </ShineBorder>
           </BlurFade>
-          <BoxReveal width="100%">
+          <BoxReveal boxColor={theme == "dark" ? "white" : "black"} width="100%">
             <BlurFade
               className="w-full"
               delay={BLUR_FADE_DELAY * 8}
@@ -115,14 +111,13 @@ export default function Page() {
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
             <ShineBorder
               className="relative flex h-fit w-[100%] p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
-              color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
             >
               <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-black bg-clip-text text-center text-5xl font-semibold font-f2 leading-none text-transparent dark:from-white dark:to-slate-900/10">
                 Skills
               </span>
             </ShineBorder>
           </BlurFade>
-          <BoxReveal width="100%">
+          <BoxReveal boxColor={theme == "dark" ? "white" : "black"} width="100%">
             <Skills />
           </BoxReveal>
         </div>

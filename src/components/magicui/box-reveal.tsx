@@ -19,6 +19,7 @@ export const BoxReveal = ({
 }: BoxRevealProps) => {
   const mainControls = useAnimation();
   const slideControls = useAnimation();
+  console.log(boxColor);
 
   const ref = useRef(null);
   const isInView = useInView(ref);
@@ -64,7 +65,7 @@ export const BoxReveal = ({
           left: 0,
           right: 0,
           zIndex: 20,
-          background: theme === "dark" ? "#ffffff" : "#000000",
+          background: theme == 'light' ? "#000000" : "#ffffff",
         }}
       />
     </div>
