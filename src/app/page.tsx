@@ -74,7 +74,7 @@ export default function Page() {
         </BlurFade>
         <BoxReveal boxColor={theme === "dark" ? "#ffffff" : "black"}>
           <BlurFade delay={BLUR_FADE_DELAY * 4}>
-            <Markdown className={theme === "dark" ? "prose max-w-full text-pretty mt-5  text-xl text-muted-foreground dark:prose-invert text-justify font-f2 text-white " : "prose max-w-full text-pretty mt-5  text-xl font-medium dark:prose-invert text-justify font-f2 text-black"}>
+            <Markdown className={theme == "dark" ? "prose max-w-full text-pretty mt-5  text-xl text-muted-foreground dark:prose-invert text-justify font-f2 text-white " : "prose max-w-full text-pretty mt-5  text-xl font-medium dark:prose-invert text-justify font-f2 text-black"}>
               {DATA.summary}
             </Markdown>
           </BlurFade>
