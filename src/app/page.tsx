@@ -30,7 +30,7 @@ const BLUR_FADE_DELAY = 0.4;
 
 export default function Page() {
   const { theme } = useTheme()
-  console.log(theme)
+  // console.log(theme)
   return (
     <main className="flex flex-col items-center justify-center w-full min-h-[100dvh] space-y-10 lg:px-56 xl:px-72">
       {/* <Meteors number={100}/> */}
