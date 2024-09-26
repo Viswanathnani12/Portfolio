@@ -85,7 +85,7 @@ export default function Page() {
 
       <section id="education" className="w-full px-5 py-10">
         <div className="flex flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 7}>
+          <BlurFade delay={BLUR_FADE_DELAY * 3}>
             <ShineBorder
               className="relative flex h-fit w-[100%] p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
               color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
@@ -98,7 +98,7 @@ export default function Page() {
           <BoxReveal boxColor={theme == "dark" ? "white" : "black"} width="100%">
             <BlurFade
               className="w-full"
-              delay={BLUR_FADE_DELAY * 8}
+              delay={BLUR_FADE_DELAY * 4}
             >
               <EduList />
             </BlurFade>
