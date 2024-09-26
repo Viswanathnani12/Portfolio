@@ -15,11 +15,20 @@ import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
 import SparklesText from "@/components/magicui/sparkles-text";
 import Ripple from "@/components/magicui/ripple";
 import { useTheme } from "next-themes";
+import BoxReveal from "@/components/magicui/box-reveal";
+import { NeonGradientCard } from "@/components/magicui/neon-gradient-card";
+import ShineBorder from "@/components/magicui/shine-border";
+import { AnimatedList } from "@/components/magicui/animated-list";
+import EduList from "@/components/EduList";
+import OrbitingCircles from "@/components/magicui/orbiting-circles";
+// import { GitBranch } from "lucide-react";
+
+import Skills from "@/components/Skills";
 
 const BLUR_FADE_DELAY = 0.4;
 
 export default function Page() {
-  const {theme} = useTheme()
+  const { theme } = useTheme()
   // console.log(theme)
   return (
     <main className="flex flex-col items-center justify-center w-full min-h-[100dvh] space-y-10 lg:px-56 xl:px-72">
@@ -27,20 +36,20 @@ export default function Page() {
       <Particles quantity={300}
         className="absolute top-5 h-[90%] w-full"
         ease={80}
-        color={theme == "dark" ? "#ffffff":"black"}
+        color={theme == "dark" ? "#ffffff" : "black"}
         refresh />
       <section id="hero" className="w-full px-5 py-32 ">
         <div className="w-full flex items-center justify-center space-y-8 lg:mt-28">
           <div className="gap-2 flex flex-col justify-center items-center ">
             <div className="flex-col flex flex-1 space-y-1.5">
-              <SparklesText className="w-full text-6xl md:text-7xl text-center font-f2" text={DATA.name}/>
+              <SparklesText className="w-full text-6xl md:text-7xl text-center font-f2" text={DATA.name} />
               <BlurFadeText
-                className="max-w-[600px] text-xl mx-auto md:text-xl text-balance  mt-2 mb-10 font-f2"
+                className="max-w-[600px] text-xl mx-auto md:text-xl text-balance  mt-2 mb-10 font-f2 font-medium"
                 delay={BLUR_FADE_DELAY}
                 text={DATA.description}
               />
             </div>
-            <Ripple className="hidden md:block md:w-full"/>
+            <Ripple className="hidden md:block md:w-full" />
             {/* <BlurFade delay={BLUR_FADE_DELAY} className="flex items-center justify-center">
               <Avatar className="size-28 border ">
                 <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
@@ -50,95 +59,113 @@ export default function Page() {
           </div>
         </div>
       </section>
-      
+
+
       <section id="about" className="w-full px-5 py-10">
-        <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl font-bold">About</h2>
+        <BlurFade delay={BLUR_FADE_DELAY * 3} className="flex items-center justify-center pb-10">
+          <ShineBorder
+            className={theme == 'dark' ? "relative flex h-fit w-[100%] p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl" : "relative flex h-fit w-[100%] p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background  "}
+            color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
+          >
+            <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-black bg-clip-text text-center text-5xl font-semibold font-f2 leading-none text-transparent dark:from-white dark:to-slate-900/10">
+              ABOUT
+            </span>
+          </ShineBorder>
         </BlurFade>
-        <BlurFade delay={BLUR_FADE_DELAY * 4}>
-          <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
-            {DATA.summary}
-          </Markdown>
-        </BlurFade>
-      </section>
-      <section id="education" className="w-full px-5 py-10">
-        <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 7}>
-            <h2 className="text-xl font-bold">Education</h2>
+        <BoxReveal boxColor={theme === "dark" ? "#ffffff" : "black"}>
+          <BlurFade delay={BLUR_FADE_DELAY * 4}>
+            <Markdown className={theme === "dark" ? "prose max-w-full text-pretty mt-5  text-xl text-muted-foreground dark:prose-invert text-justify font-f2 text-white " : "prose max-w-full text-pretty mt-5  text-xl font-medium dark:prose-invert text-justify font-f2 text-black"}>
+              {DATA.summary}
+            </Markdown>
           </BlurFade>
-          {DATA.education.map((education, id) => (
-            <BlurFade
-              key={education.school}
-              delay={BLUR_FADE_DELAY * 8 + id * 0.05}
+
+        </BoxReveal>
+      </section>
+
+      <section id="education" className="w-full px-5 py-10">
+        <div className="flex flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 7}>
+            <ShineBorder
+              className={theme == 'dark' ? "relative flex h-fit w-[100%] p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl" : "relative flex h-fit w-[100%] p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background  "}
+              color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
             >
-              <ResumeCard
-                key={education.school}
-                href={education.href}
-                logoUrl={education.logoUrl}
-                altText={education.school}
-                title={education.school}
-                subtitle={education.degree}
-                period={`${education.start} - ${education.end}`}
-              />
+              <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-black bg-clip-text text-center text-5xl font-semibold font-f2 leading-none text-transparent dark:from-white dark:to-slate-900/10">
+                Education
+              </span>
+            </ShineBorder>
+          </BlurFade>
+          <BoxReveal boxColor={theme === "dark" ? "#ffffff" : "black"} width="100%">
+            <BlurFade
+              className="w-full"
+              delay={BLUR_FADE_DELAY * 8}
+            >
+              <EduList />
             </BlurFade>
-          ))}
+          </BoxReveal>
         </div>
       </section>
-      <section id="skills" className="w-full px-5 py-10">
+
+      <section id="skills" className="mt-20 w-full px-5 py-10">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
-            <h2 className="text-xl font-bold">Skills</h2>
+            <ShineBorder
+              className={theme == 'dark' ? "relative flex h-fit w-[100%] p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl" : "relative flex h-fit w-[100%] p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background  "}
+              color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
+            >
+              <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-black bg-clip-text text-center text-5xl font-semibold font-f2 leading-none text-transparent dark:from-white dark:to-slate-900/10">
+                SKILLS
+              </span>
+            </ShineBorder>
           </BlurFade>
-          <div className="flex flex-wrap gap-1">
-            {DATA.skills.map((skill, id) => (
-              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
-              </BlurFade>
-            ))}
-          </div>
+          <BoxReveal boxColor={theme === "dark" ? "#ffffff" : "black"} width="100%">
+            <Skills />
+          </BoxReveal>
         </div>
       </section>
-      <section id="projects" className="px-5 py-10">
-        <div className="space-y-12 w-full py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 11}>
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                  My Projects
+
+      <BoxReveal>
+        <section id="projects" className="px-5 py-10">
+          <div className="space-y-12 w-full py-12">
+            <BlurFade delay={BLUR_FADE_DELAY * 11}>
+              <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                <div className="space-y-2">
+                  <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                    My Projects
+                  </div>
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                    Check out my latest work
+                  </h2>
+                  <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                    I&apos;ve worked on a variety of projects, from simple
+                    websites to complex web applications. Here are a few of my
+                    favorites.
+                  </p>
                 </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Check out my latest work
-                </h2>
-                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  I&apos;ve worked on a variety of projects, from simple
-                  websites to complex web applications. Here are a few of my
-                  favorites.
-                </p>
               </div>
-            </div>
-          </BlurFade>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-            {DATA.projects.map((project, id) => (
-              <BlurFade
-                key={project.title}
-                delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-              >
-                <ProjectCard
-                  href={project.href}
+            </BlurFade>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+              {DATA.projects.map((project, id) => (
+                <BlurFade
                   key={project.title}
-                  title={project.title}
-                  description={project.description}
-                  dates={project.dates}
-                  tags={project.technologies}
-                  image={project.image}
-                  video={project.video}
-                  links={project.links}
-                />
-              </BlurFade>
-            ))}
+                  delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+                >
+                  <ProjectCard
+                    href={project.href}
+                    key={project.title}
+                    title={project.title}
+                    description={project.description}
+                    dates={project.dates}
+                    tags={project.technologies}
+                    image={project.image}
+                    video={project.video}
+                    links={project.links}
+                  />
+                </BlurFade>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </BoxReveal>
       <section id="hackathons" className="w-full px-5 py-5">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 13}>

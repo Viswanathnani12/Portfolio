@@ -24,14 +24,14 @@ export default function Navbar() {
                   href={item.href}
                   className={cn(
                     buttonVariants({ variant: "ghost", size: "icon" }),
-                    "size-12"
+                    "size-12 font-f2"
                   )}
                 >
                   <item.icon className="size-4" />
                 </Link>
               </TooltipTrigger>
               <TooltipContent>
-                <p>{item.label}</p>
+                <p className="font-f2">{item.label}</p>
               </TooltipContent>
             </Tooltip>
           </DockIcon>
@@ -63,7 +63,7 @@ export default function Navbar() {
         <DockIcon>
           <Tooltip>
             <TooltipTrigger asChild>
-              <ModeToggle />
+              <ModeToggle  />
             </TooltipTrigger>
             <TooltipContent>
               <p>Theme</p>
