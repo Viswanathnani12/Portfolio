@@ -24,19 +24,24 @@ import OrbitingCircles from "@/components/magicui/orbiting-circles";
 // import { GitBranch } from "lucide-react";
 
 import Skills from "@/components/Skills";
+import { useEffect } from "react";
 
 const BLUR_FADE_DELAY = 0.4;
 
 export default function Page() {
   const { theme } = useTheme()
-  // console.log(theme)
+
+
+
+
+  // console.log(theme == "dark")
   return (
     <main className="flex flex-col items-center justify-center w-full min-h-[100dvh] space-y-10 lg:px-56 xl:px-72">
       {/* <Meteors number={100}/> */}
       <Particles quantity={300}
         className="absolute top-5 h-[90%] w-full"
         ease={80}
-        color={theme == "dark" ? "#ffffff" : "black"}
+        color={theme == "dark" ? "#ffffff" : "#000000"}
         refresh />
       <section id="hero" className="w-full px-5 py-32 ">
         <div className="w-full flex items-center justify-center space-y-8 lg:mt-28">
@@ -64,17 +69,17 @@ export default function Page() {
       <section id="about" className="w-full px-5 py-10">
         <BlurFade delay={BLUR_FADE_DELAY * 3} className="flex items-center justify-center pb-10">
           <ShineBorder
-            className={theme == 'dark' ? "relative flex h-fit w-[100%] p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl" : "relative flex h-fit w-[100%] p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background  "}
+            className="relative flex h-fit w-[100%] p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
             color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
           >
             <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-black bg-clip-text text-center text-5xl font-semibold font-f2 leading-none text-transparent dark:from-white dark:to-slate-900/10">
-              ABOUT
+              About
             </span>
           </ShineBorder>
         </BlurFade>
-        <BoxReveal boxColor={theme === "dark" ? "#ffffff" : "black"}>
+        <BoxReveal>
           <BlurFade delay={BLUR_FADE_DELAY * 4}>
-            <Markdown className={theme == "dark" ? "prose max-w-full text-pretty mt-5  text-xl text-muted-foreground dark:prose-invert text-justify font-f2 text-white " : "prose max-w-full text-pretty mt-5  text-xl font-medium dark:prose-invert text-justify font-f2 text-black"}>
+            <Markdown className="prose max-w-full text-pretty mt-5  text-xl  dark:prose-invert text-justify font-f2 font-medium text-black dark:text-white">
               {DATA.summary}
             </Markdown>
           </BlurFade>
@@ -86,7 +91,7 @@ export default function Page() {
         <div className="flex flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
             <ShineBorder
-              className={theme == 'dark' ? "relative flex h-fit w-[100%] p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl" : "relative flex h-fit w-[100%] p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background  "}
+              className="relative flex h-fit w-[100%] p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
               color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
             >
               <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-black bg-clip-text text-center text-5xl font-semibold font-f2 leading-none text-transparent dark:from-white dark:to-slate-900/10">
@@ -94,7 +99,7 @@ export default function Page() {
               </span>
             </ShineBorder>
           </BlurFade>
-          <BoxReveal boxColor={theme === "dark" ? "#ffffff" : "black"} width="100%">
+          <BoxReveal width="100%">
             <BlurFade
               className="w-full"
               delay={BLUR_FADE_DELAY * 8}
@@ -109,15 +114,15 @@ export default function Page() {
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
             <ShineBorder
-              className={theme == 'dark' ? "relative flex h-fit w-[100%] p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl" : "relative flex h-fit w-[100%] p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background  "}
+              className="relative flex h-fit w-[100%] p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
               color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
             >
               <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-black bg-clip-text text-center text-5xl font-semibold font-f2 leading-none text-transparent dark:from-white dark:to-slate-900/10">
-                SKILLS
+                Skills
               </span>
             </ShineBorder>
           </BlurFade>
-          <BoxReveal boxColor={theme === "dark" ? "#ffffff" : "black"} width="100%">
+          <BoxReveal width="100%">
             <Skills />
           </BoxReveal>
         </div>

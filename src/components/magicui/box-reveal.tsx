@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
+import { useTheme } from "next-themes"
 
 interface BoxRevealProps {
   children: JSX.Element;
@@ -32,6 +33,8 @@ export const BoxReveal = ({
     }
   }, [isInView, mainControls, slideControls]);
 
+  const { theme } = useTheme();
+
   return (
     <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
       <motion.div
@@ -61,7 +64,7 @@ export const BoxReveal = ({
           left: 0,
           right: 0,
           zIndex: 20,
-          background: boxColor ? boxColor : "#ffffff",
+          background: theme === "dark" ? "#ffffff" : "#000000",
         }}
       />
     </div>
