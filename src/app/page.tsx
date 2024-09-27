@@ -65,7 +65,7 @@ export default function Page() {
       <section id="about" className="w-full px-5 py-10">
         <BlurFade delay={BLUR_FADE_DELAY * 3} className="flex items-center justify-center pb-10">
           <ShineBorder
-            className="relative flex h-fit w-[100%] p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
+            className="relative flex h-fit w-fit p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
             color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
           >
             <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-black bg-clip-text text-center text-5xl font-semibold font-f2 leading-none text-transparent dark:from-white dark:to-slate-900/10">
@@ -73,7 +73,7 @@ export default function Page() {
             </span>
           </ShineBorder>
         </BlurFade>
-        <BoxReveal boxColor={theme == "dark" ? "white" : "black"}>
+        <BoxReveal>
           <BlurFade delay={BLUR_FADE_DELAY * 4}>
             <Markdown className="prose max-w-full text-pretty mt-5  text-xl  dark:prose-invert text-justify font-f2 font-medium text-black dark:text-white">
               {DATA.summary}
@@ -85,9 +85,9 @@ export default function Page() {
 
       <section id="education" className="w-full px-5 py-10">
         <div className="flex flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 3}>
+          <BlurFade delay={BLUR_FADE_DELAY * 3} className="flex items-center justify-center">
             <ShineBorder
-              className="relative flex h-fit w-[100%] p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
+              className="relative flex h-fit w-fit p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
               color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
             >
               <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-black bg-clip-text text-center text-5xl font-semibold font-f2 leading-none text-transparent dark:from-white dark:to-slate-900/10">
@@ -95,7 +95,7 @@ export default function Page() {
               </span>
             </ShineBorder>
           </BlurFade>
-          <BoxReveal boxColor={theme == "dark" ? "white" : "black"} width="100%">
+          <BoxReveal width="100%">
             <BlurFade
               className="w-full"
               delay={BLUR_FADE_DELAY * 4}
@@ -108,16 +108,17 @@ export default function Page() {
 
       <section id="skills" className="mt-20 w-full px-5 py-10">
         <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 9}>
+          <BlurFade delay={BLUR_FADE_DELAY * 9} className="flex items-center justify-center">
             <ShineBorder
-              className="relative flex h-fit w-[100%] p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
+              className="relative flex h-fit w-fit p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
+              color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
             >
               <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-black bg-clip-text text-center text-5xl font-semibold font-f2 leading-none text-transparent dark:from-white dark:to-slate-900/10">
                 Skills
               </span>
             </ShineBorder>
           </BlurFade>
-          <BoxReveal boxColor={theme == "dark" ? "white" : "black"} width="100%">
+          <BoxReveal width="100%">
             <Skills />
           </BoxReveal>
         </div>

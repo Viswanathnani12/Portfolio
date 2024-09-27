@@ -65,7 +65,7 @@ export const BoxReveal = ({
           left: 0,
           right: 0,
           zIndex: 20,
-          background: theme == 'light' ? "#000000" : "#ffffff",
+          background: theme == 'light' ? "#d9d9d9 " : "#181823",
         }}
       />
     </div>
