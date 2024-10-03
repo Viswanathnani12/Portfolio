@@ -124,32 +124,29 @@ export default function Page() {
         </div>
       </section>
 
-      <BoxReveal>
-        <section id="projects" className="px-5 py-10">
-          <div className="space-y-12 w-full py-12">
-            <BlurFade delay={BLUR_FADE_DELAY * 11}>
-              <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                <div className="space-y-2">
-                  <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                    My Projects
-                  </div>
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                    Check out my latest work
-                  </h2>
-                  <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    I&apos;ve worked on a variety of projects, from simple
-                    websites to complex web applications. Here are a few of my
-                    favorites.
-                  </p>
-                </div>
-              </div>
-            </BlurFade>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-              {DATA.projects.map((project, id) => (
-                <BlurFade
-                  key={project.title}
-                  delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-                >
+
+      <section id="projects" className="px-5 py-10">
+        <div className="space-y-12 w-full py-12">
+          <BlurFade delay={BLUR_FADE_DELAY * 9} className="flex items-center justify-center">
+            <ShineBorder
+              className="relative flex h-fit w-fit p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
+              color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
+            >
+              <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-black bg-clip-text text-center text-5xl font-semibold font-f2 leading-none text-transparent dark:from-white dark:to-slate-900/10">
+                My Projects
+              </span>
+            </ShineBorder>
+          </BlurFade>
+
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+
+            {DATA.projects.map((project, id) => (
+
+              <BlurFade
+                key={project.title}
+                delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+              >
+                <BoxReveal width="100%">
                   <ProjectCard
                     href={project.href}
                     key={project.title}
@@ -161,12 +158,14 @@ export default function Page() {
                     video={project.video}
                     links={project.links}
                   />
-                </BlurFade>
-              ))}
-            </div>
+                </BoxReveal>
+              </BlurFade>
+
+            ))}
           </div>
-        </section>
-      </BoxReveal>
+        </div>
+      </section>
+
       <section id="hackathons" className="w-full px-5 py-5">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 13}>
