@@ -25,6 +25,8 @@ import OrbitingCircles from "@/components/magicui/orbiting-circles";
 
 import Skills from "@/components/Skills";
 import { useEffect } from "react";
+import { MagicCard } from "@/components/ui/magic-card";
+import Safari from "@/components/ui/safari";
 
 const BLUR_FADE_DELAY = 0.4;
 
@@ -125,7 +127,7 @@ export default function Page() {
       </section>
 
 
-      <section id="projects" className="px-5 py-10">
+      <section id="projects" className="px-5 py-10 w-full">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 9} className="flex items-center justify-center">
             <ShineBorder
@@ -137,78 +139,67 @@ export default function Page() {
               </span>
             </ShineBorder>
           </BlurFade>
-
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-
-            {DATA.projects.map((project, id) => (
-
-              <BlurFade
-                key={project.title}
-                delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-              >
-                <BoxReveal width="100%">
-                  <ProjectCard
-                    href={project.href}
-                    key={project.title}
-                    title={project.title}
-                    description={project.description}
-                    dates={project.dates}
-                    tags={project.technologies}
-                    image={project.image}
-                    video={project.video}
-                    links={project.links}
-                  />
-                </BoxReveal>
-              </BlurFade>
-
-            ))}
-          </div>
         </div>
-      </section>
 
-      <section id="hackathons" className="w-full px-5 py-5">
-        <div className="space-y-12 w-full py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 13}>
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                  Hackathons
-                </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  I like building things
-                </h2>
-                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  During my time in university, I attended{" "}
-                  {DATA.hackathons.length}+ hackathons. People from around the
-                  country would come together and build incredible things in 2-3
-                  days. It was eye-opening to see the endless possibilities
-                  brought to life by a group of motivated and passionate
-                  individuals.
-                </p>
+        <div className="grid md:grid-cols-2 gap-10">
+          {DATA.projects.map((project, id) => (
+
+            <BlurFade
+              key={project.title}
+              delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+            >
+
+              <ProjectCard
+                href={project.href}
+                key={project.title}
+                title={project.title}
+                description={project.description}
+                dates={project.dates}
+                tags={project.technologies}
+                image={project.image}
+                video={project.video}
+                links={project.links}
+              />
+
+            </BlurFade>
+
+          ))}
+        </div>
+
+
+        {/* <div className="w-full h-full grid grid-cols-2 gap-5">
+          <MagicCard className="w-full h-full flex flex-col" gradientColor={theme === "dark" ? "#858282" : "#D9D9D955"}>
+            <div className="p-2">
+              
+              <Safari
+                url="InsightBlendAnalytics"
+                className="size-full"
+                src="insight.png" />
+            </div>
+            <div className="pl-4 pt-1 flex flex-col gap-4 pr-4">
+              <p className="font-f2 text-lg">Insight Blend Analytics</p>
+              <p className="font-f2 text-sm text-justify">Developed the website for Insight Blend Analytics using React JS, Tailwind CSS, and Framer Motion, focusing on
+                responsive design, interactive features and elegant animations.Utilized Git and GitHub for version control to manage
+                code changes and collaboration. Deployed the site with Render for reliable hosting and optimal performance.
+              </p>
+              <div>
+            <Skills />
+
               </div>
             </div>
-          </BlurFade>
-          <BlurFade delay={BLUR_FADE_DELAY * 14}>
-            <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
-              {DATA.hackathons.map((project, id) => (
-                <BlurFade
-                  key={project.title + project.dates}
-                  delay={BLUR_FADE_DELAY * 15 + id * 0.05}
-                >
-                  <HackathonCard
-                    title={project.title}
-                    description={project.description}
-                    location={project.location}
-                    dates={project.dates}
-                    image={project.image}
-                    links={project.links}
-                  />
-                </BlurFade>
-              ))}
-            </ul>
-          </BlurFade>
-        </div>
+          </MagicCard>
+          <MagicCard className="w-full h-full p-20" gradientColor={theme === "dark" ? "#858282" : "#D9D9D955"}>
+            Magic
+          </MagicCard>
+          <MagicCard className="w-full h-full p-20" gradientColor={theme === "dark" ? "#858282" : "#D9D9D955"}>
+            Magic
+          </MagicCard>
+        </div> */}
+
+
       </section>
+
+
       <section id="contact" className="w-full px-5 py-5">
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
