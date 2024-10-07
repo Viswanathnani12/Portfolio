@@ -27,6 +27,8 @@ import Skills from "@/components/Skills";
 import { useEffect } from "react";
 import { MagicCard } from "@/components/ui/magic-card";
 import Safari from "@/components/ui/safari";
+import Home from "@/components/Test";
+import App from "@/components/Test";
 
 const BLUR_FADE_DELAY = 0.4;
 
@@ -76,7 +78,7 @@ export default function Page() {
           </ShineBorder>
         </BlurFade>
         <BoxReveal>
-          <BlurFade delay={BLUR_FADE_DELAY * 4}>
+          <BlurFade delay={BLUR_FADE_DELAY * 3}>
             <Markdown className="prose max-w-full text-pretty mt-5  text-xl  dark:prose-invert text-justify font-f2 font-medium text-black dark:text-white">
               {DATA.summary}
             </Markdown>
@@ -108,9 +110,13 @@ export default function Page() {
         </div>
       </section>
 
+      {/* <section className="">
+        <App />
+      </section> */}
+
       <section id="skills" className="mt-20 w-full px-5 py-10">
         <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 9} className="flex items-center justify-center">
+          <BlurFade delay={BLUR_FADE_DELAY * 3} className="flex items-center justify-center">
             <ShineBorder
               className="relative flex h-fit w-fit p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
               color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
@@ -129,7 +135,7 @@ export default function Page() {
 
       <section id="projects" className="px-5 py-10 w-full">
         <div className="space-y-12 w-full py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 9} className="flex items-center justify-center">
+          <BlurFade delay={BLUR_FADE_DELAY * 3} className="flex items-center justify-center">
             <ShineBorder
               className="relative flex h-fit w-fit p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
               color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
