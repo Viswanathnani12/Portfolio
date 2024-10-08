@@ -29,6 +29,8 @@ import { MagicCard } from "@/components/ui/magic-card";
 import Safari from "@/components/ui/safari";
 import Home from "@/components/Test";
 import App from "@/components/Test";
+import Image from "next/image";
+import ShimmerButton from "@/components/ui/shimmer-button";
 
 const BLUR_FADE_DELAY = 0.4;
 
@@ -152,7 +154,7 @@ export default function Page() {
 
             <BlurFade
               key={project.title}
-              delay={BLUR_FADE_DELAY * 5 + id * 0.05}
+              delay={BLUR_FADE_DELAY * 5}
             >
               <BoxReveal width="100%">
                 <ProjectCard
@@ -206,29 +208,47 @@ export default function Page() {
       </section>
 
 
-      <section id="contact" className="w-full px-5 py-5">
+      <section id="contact" className="w-full px-5 py-20">
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 16}>
-            <div className="space-y-3">
-              <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                Contact
-              </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Get in Touch
-              </h2>
-              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Want to chat? Just shoot me a dm{" "}
-                <Link
-                  href={DATA.contact.social.X.url}
-                  className="text-blue-500 hover:underline"
+
+          <div className="space-y-3">
+            <div className="space-y-12 w-full py-12">
+              <BlurFade delay={BLUR_FADE_DELAY * 3} className="flex items-center justify-center">
+                <ShineBorder
+                  className="relative flex h-fit w-fit p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
+                  color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
                 >
-                  with a direct question on twitter
-                </Link>{" "}
-                and I&apos;ll respond whenever I can. I will ignore all
-                soliciting.
-              </p>
+                  <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-black bg-clip-text text-center text-5xl font-semibold font-f2 leading-none text-transparent dark:from-white dark:to-slate-900/10">
+                    Contact
+                  </span>
+                </ShineBorder>
+              </BlurFade>
             </div>
-          </BlurFade>
+            <div className="flex gap-5">
+              {/* <Image width={50} height={50} alt="git" src={'/github-mark-white.png'} /> */}
+              <a className="w-full h-full" href='https://github.com/Viswanathnani12' target="_blank">
+                <ShimmerButton className="">
+                  <Image width={30} height={30} alt="git" src={'/github-mark-white.png'} />
+                </ShimmerButton>
+              </a>
+              <a className="w-full h-full" href='https://www.linkedin.com/in/viswanath-singanamilli-4b7806239' target="_blank">
+                <ShimmerButton className="">
+                  <Image width={30} height={30} alt="git" src={'/linkedin.png'} />
+                </ShimmerButton>
+              </a>
+              <a className="w-full h-full" href='mailto:viswanathnani12@gmail.com' target="_blank">
+                <ShimmerButton className="">
+                  <Image width={30} height={30} alt="git" src={'/gmail.png'} />
+                </ShimmerButton>
+              </a>
+              {/* <a className="w-full h-full" href='https://github.com/Viswanathnani12' target="_blank">
+                <ShimmerButton className="">
+                  <Image width={30} height={30} alt="git" src={'/whatsapp.svg'} />
+                </ShimmerButton>
+              </a> */}
+            </div>
+          </div>
+
         </div>
       </section>
     </main>

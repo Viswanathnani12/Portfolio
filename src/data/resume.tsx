@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon, School, CircleUserIcon, WrenchIcon, FolderOpenDot } from "lucide-react";
+import { HomeIcon, NotebookIcon, School, CircleUserIcon, WrenchIcon, FolderOpenDot, PhoneCall } from "lucide-react";
 
 export const DATA = {
   name: "Viswanath Singanamilli",
@@ -32,10 +32,11 @@ export const DATA = {
     { href: "#education", icon: School, label: "Education" },
     { href: "#skills", icon: WrenchIcon, label: "Skills" },
     { href: "#projects", icon: FolderOpenDot, label: "Projects" },
+    { href: "#contact", icon: PhoneCall, label: "Contact" },
   ],
   contact: {
-    email: "hello@example.com",
-    tel: "+123456789",
+    email: "viswanathnani12@gmail.com",
+    tel: "+917995839379",
     social: {
       GitHub: {
         name: "GitHub",
@@ -53,15 +54,12 @@ export const DATA = {
         name: "X",
         url: "https://dub.sh/dillion-twitter",
         icon: Icons.x,
-
         navbar: true,
       },
-
       email: {
         name: "Send Email",
         url: "#",
         icon: Icons.email,
-
         navbar: false,
       },
     },
@@ -150,15 +148,15 @@ export const DATA = {
 
       ],
       image: "",
-      video: "https://cdn.llm.report/openai-demo.mp4",
+      video: "vv.mp4",
     },
     {
       title: "E-commerce",
-      href: "https://automatic.chat",
+      href: "",
       dates: "April 2023 - March 2024",
       active: true,
       description:
-        "Developed an AI Customer Support Chatbot which automatically responds to customer support tickets using the latest GPT models.",
+        "",
       technologies: [
         "Next.js",
         "Typescript",
