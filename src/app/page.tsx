@@ -149,7 +149,7 @@ export default function Page() {
           </BlurFade>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid md:grid-cols-2 gap-5">
           {DATA.projects.map((project, id) => (
 
             <BlurFade
@@ -210,33 +210,38 @@ export default function Page() {
 
       <section id="contact" className="w-full px-5 py-20">
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
+          <div className="space-y-12 w-full py-12">
+            <BlurFade delay={BLUR_FADE_DELAY * 3} className="flex items-center justify-center">
+              <ShineBorder
+                className="relative flex h-fit w-fit p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
+                color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
+              >
+                <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-black bg-clip-text text-center text-5xl font-semibold font-f2 leading-none text-transparent dark:from-white dark:to-slate-900/10">
+                  Contact
+                </span>
+              </ShineBorder>
+            </BlurFade>
+            <div>
+              <p className="font-f2 text-2xl text-balance">Feel free to reach out for innovative solutions and impactful collaborations. Let’s build something amazing together—get in touch today!</p>
+            </div>
+          </div>
 
           <div className="space-y-3">
-            <div className="space-y-12 w-full py-12">
-              <BlurFade delay={BLUR_FADE_DELAY * 3} className="flex items-center justify-center">
-                <ShineBorder
-                  className="relative flex h-fit w-fit p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
-                  color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
-                >
-                  <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-black bg-clip-text text-center text-5xl font-semibold font-f2 leading-none text-transparent dark:from-white dark:to-slate-900/10">
-                    Contact
-                  </span>
-                </ShineBorder>
-              </BlurFade>
-            </div>
-            <div className="flex gap-5">
+
+
+            <div className="flex gap-10 items-center justify-center ">
               {/* <Image width={50} height={50} alt="git" src={'/github-mark-white.png'} /> */}
-              <a className="w-full h-full" href='https://github.com/Viswanathnani12' target="_blank">
+              <a className="w-fit  h-full" href='https://github.com/Viswanathnani12' target="_blank">
                 <ShimmerButton className="">
                   <Image width={30} height={30} alt="git" src={'/github-mark-white.png'} />
                 </ShimmerButton>
               </a>
-              <a className="w-full h-full" href='https://www.linkedin.com/in/viswanath-singanamilli-4b7806239' target="_blank">
+              <a className="w-fit h-full " href='https://www.linkedin.com/in/viswanath-singanamilli-4b7806239' target="_blank">
                 <ShimmerButton className="">
                   <Image width={30} height={30} alt="git" src={'/linkedin.png'} />
                 </ShimmerButton>
               </a>
-              <a className="w-full h-full" href='mailto:viswanathnani12@gmail.com' target="_blank">
+              <a className="w-fit h-full " href='mailto:viswanathnani12@gmail.com' target="_blank">
                 <ShimmerButton className="">
                   <Image width={30} height={30} alt="git" src={'/gmail.png'} />
                 </ShimmerButton>

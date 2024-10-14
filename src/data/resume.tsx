@@ -4,7 +4,7 @@ import { HomeIcon, NotebookIcon, School, CircleUserIcon, WrenchIcon, FolderOpenD
 export const DATA = {
   name: "Viswanath Singanamilli",
   initials: "SV",
-  url: "https://dillion.io",
+  url: "https://portfolio-black-nine-74.vercel.app/",
   location: "Kakinada,Andhra Pradhesh,India",
   locationLink: "https://www.google.com/maps/place/Kakinada",
   description:
@@ -38,30 +38,8 @@ export const DATA = {
     email: "viswanathnani12@gmail.com",
     tel: "+917995839379",
     social: {
-      GitHub: {
-        name: "GitHub",
-        url: "https://dub.sh/dillion-github",
-        icon: Icons.github,
-        navbar: true,
-      },
-      LinkedIn: {
-        name: "LinkedIn",
-        url: "https://dub.sh/dillion-linkedin",
-        icon: Icons.linkedin,
-        navbar: true,
-      },
-      X: {
-        name: "X",
-        url: "https://dub.sh/dillion-twitter",
-        icon: Icons.x,
-        navbar: true,
-      },
-      email: {
-        name: "Send Email",
-        url: "#",
-        icon: Icons.email,
-        navbar: false,
-      },
+
+
     },
   },
 
@@ -99,6 +77,33 @@ export const DATA = {
       image: "",
       video:
         "insight.mp4",
+    },
+    {
+      title: "Oyola",
+      href: "https://oyola.in/",
+      dates: "July 2023 - August 2024",
+      active: true,
+      description:
+        "Developed a user-friendly website designed to streamline bookings. Whether you're looking to book hotels, rent a car, or reserve a room, the platform offers a seamless experience, ensuring travelers can plan their stay with ease and convenience.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "PostgreSQL",
+        "Prisma",
+        "TailwindCSS",
+        "Framer Motion",
+        "Figma"
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://oyola.in/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/oyola.gif",
+      video:
+        "",
     },
     {
       title: "Placement Plus",
@@ -150,35 +155,7 @@ export const DATA = {
       image: "",
       video: "vv.mp4",
     },
-    {
-      title: "E-commerce",
-      href: "",
-      dates: "April 2023 - March 2024",
-      active: true,
-      description:
-        "",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://automatic.chat",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
-    },
+
   ],
 
 } as const;
