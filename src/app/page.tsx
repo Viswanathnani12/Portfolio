@@ -31,11 +31,16 @@ import Home from "@/components/Test";
 import App from "@/components/Test";
 import Image from "next/image";
 import ShimmerButton from "@/components/ui/shimmer-button";
+import ShinyButton from "@/components/ui/shiny-button";
+import { FileDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
 
 const BLUR_FADE_DELAY = 0.4;
 
 export default function Page() {
   const { theme } = useTheme()
+
   // console.log(theme)
   return (
     <main className="flex flex-col items-center justify-center w-full min-h-[100dvh] space-y-10 lg:px-56 xl:px-72">
@@ -55,6 +60,7 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY}
                 text={DATA.description}
               />
+
             </div>
             <Ripple className="hidden md:block md:w-full" />
             {/* <BlurFade delay={BLUR_FADE_DELAY} className="flex items-center justify-center">
@@ -65,6 +71,9 @@ export default function Page() {
             </BlurFade> */}
           </div>
         </div>
+        <a href="./Resume.pdf" target="_blank" rel="noopener noreferrer" className="flex w-full items-center justify-center">
+          <ShinyButton className="w-fit font-f2" >Resume <FileDown className="mt-0.5" /></ShinyButton>
+        </a>
       </section>
 
 
