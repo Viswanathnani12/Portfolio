@@ -137,12 +137,12 @@ export default function Skills() {
     return (
         <>
             <div className="relative flex h-fit w-full p-10 flex-col items-center justify-center overflow-hidden rounded-lg  bg-background md:shadow-xl">
-                <Marquee pauseOnHover className="[--duration:20s]">
+                <Marquee pauseOnHover className="[--duration:35s]">
                     {firstRow.map((review) => (
                         <ReviewCard key={review.body} {...review} />
                     ))}
                 </Marquee>
-                <Marquee reverse pauseOnHover className="[--duration:20s]">
+                <Marquee reverse pauseOnHover className="[--duration:35s]">
                     {firstRow.map((review) => (
                         <ReviewCard key={review.body} {...review} />
                     ))}
