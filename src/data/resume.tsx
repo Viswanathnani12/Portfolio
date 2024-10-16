@@ -64,7 +64,7 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://insightblendanalytics-1.onrender.com",
+          href: "https://insightblend.com/",
           icon: <Icons.globe className="size-3" />,
         },
         {
