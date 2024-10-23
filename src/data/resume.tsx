@@ -150,7 +150,11 @@ export const DATA = {
         "Figma",
       ],
       links: [
-
+        {
+          type: "Source",
+          href: "https://github.com/Viswanathnani12/vehiclevault",
+          icon: <Icons.github className="size-3" />,
+        },
       ],
       image: "",
       video: "vv.mp4",
