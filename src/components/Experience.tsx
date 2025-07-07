@@ -25,10 +25,10 @@ const Experience = () => {
             <span>Web Developer</span>
           </AnimatedSpan>
           <AnimatedSpan delay={2000} className="text-green-500">
-            <span>December 2024 - Present</span>
+            <span>July 2024 - August 2024</span>
           </AnimatedSpan>
           <AnimatedSpan delay={2500} className="text-green-500">
-            <span>Hyderabad</span>
+            <span>Remote</span>
           </AnimatedSpan>
         </div>
       </Terminal>
