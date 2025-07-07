@@ -45,7 +45,8 @@ const BlurFadeText = ({
               exit="hidden"
               variants={combinedVariants}
               transition={{
-                yoyo: Infinity,
+                repeat: Infinity,
+                repeatType: "reverse", // You can also use "loop" or "mirror" if preferred
                 delay: delay + i * characterDelay,
                 ease: "easeOut",
               }}
@@ -69,7 +70,8 @@ const BlurFadeText = ({
           exit="hidden"
           variants={combinedVariants}
           transition={{
-            yoyo: Infinity,
+            repeat: Infinity,
+            repeatType: "reverse",
             delay,
             ease: "easeOut",
           }}
