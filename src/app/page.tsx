@@ -35,6 +35,7 @@ import ShinyButton from "@/components/ui/shiny-button";
 import { FileDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Experience from "@/components/Experience";
+import { TextAnimate } from "@/components/magicui/text-animate";
 
 
 const BLUR_FADE_DELAY = 0.4;
@@ -54,13 +55,15 @@ export default function Page() {
       <section id="hero" className="w-full px-5 py-32 ">
         <div className="w-full flex items-center justify-center space-y-8 lg:mt-28">
           <div className="gap-2 flex flex-col justify-center items-center ">
-            <div className="flex-col flex flex-1 space-y-1.5">
+            <div className="flex-col flex flex-1 space-y-1.5 text-center">
               <SparklesText className="w-full text-6xl md:text-7xl text-center font-f2" text={DATA.name} />
-              <BlurFadeText
-                className="max-w-[600px] text-xl mx-auto md:text-xl text-balance  mt-2 mb-10 font-f2 font-medium"
-                delay={BLUR_FADE_DELAY}
-                text={DATA.description}
-              />
+              <TextAnimate
+                className="max-w-[650px] text-xl mx-auto md:text-xl text-balance mt-24 mb-10 font-f2 font-medium"
+                animation="slideLeft"
+                by="character"
+              >
+                {DATA.description}
+              </TextAnimate>
 
             </div>
             <Ripple className="hidden md:block md:w-full" />
@@ -73,7 +76,7 @@ export default function Page() {
           </div>
         </div>
         <a href="./Resume.pdf" target="_blank" rel="noopener noreferrer" className="flex w-full items-center justify-center">
-          <ShinyButton className="w-fit font-f2" >Resume <FileDown className="mt-0.5" /></ShinyButton>
+          <ShinyButton className="w-fit font-f2 mt-10" >Resume <FileDown className="mt-0.5" /></ShinyButton>
         </a>
       </section>
 
