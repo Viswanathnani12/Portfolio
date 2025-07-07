@@ -8,14 +8,15 @@ export const DATA = {
   location: "Kakinada,Andhra Pradhesh,India",
   locationLink: "https://www.google.com/maps/place/Kakinada",
   description:
-    "A motivated software engineer with hands-on experience along with dynamic website creation and problem-solving abilities, seeking to apply technical skills as a fresher.",
+    "A motivated software engineer with practical experience in dynamic website development and strong problem-solving skills, eager to apply technical expertise in a professional environment.",
   summary:
-    "I'm a passionate and dedicated web developer with a Bachelor’s degree in Computer Science Engineering from Aditya Engineering College. With expertise in multiple programming languages and frameworks, I excel at building modern, responsive, and user-friendly websites and applications. My journey in development has given me a wealth of experience, from collaborating in teams to leading projects that focus on delivering impactful and innovative solutions.",
+    "I'm a passionate and dedicated software developer with a Bachelor’s degree in Computer Science Engineering from Aditya Engineering College. Currently, I’m working as an Associate Software Developer at Backflipt Software, where I contribute to the development and improvement of software applications. I have hands-on experience in real-world projects, team leadership, and a strong focus on continuous learning to deliver high-quality and impactful solutions.",
   avatarUrl: "",
   skills: [
     "React",
     "Next.js",
     "Typescript",
+    "Javascript",
     "Node.js",
     "Python",
     "Go",
@@ -24,6 +25,8 @@ export const DATA = {
     "Kubernetes",
     "Java",
     "C++",
+    "Redux",
+    "Redux Toolkit",
   ],
 
   navbar: [

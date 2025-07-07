@@ -34,6 +34,7 @@ import ShimmerButton from "@/components/ui/shimmer-button";
 import ShinyButton from "@/components/ui/shiny-button";
 import { FileDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Experience from "@/components/Experience";
 
 
 const BLUR_FADE_DELAY = 0.4;
@@ -96,6 +97,29 @@ export default function Page() {
           </BlurFade>
 
         </BoxReveal>
+      </section>
+
+      <section id="experince" className="w-full px-5 py-10">
+        <div className="flex flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 3} className="flex items-center justify-center">
+            <ShineBorder
+              className="relative flex h-fit w-fit p-5 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
+              color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
+            >
+              <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-black bg-clip-text text-center text-5xl font-semibold font-f2 leading-none text-transparent dark:from-white dark:to-slate-900/10">
+                Experience
+              </span>
+            </ShineBorder>
+          </BlurFade>
+          <BoxReveal width="100%">
+            <BlurFade
+              className="w-full "
+              delay={BLUR_FADE_DELAY * 4}
+            >
+              <Experience/>
+            </BlurFade>
+          </BoxReveal>
+        </div>
       </section>
 
       <section id="education" className="w-full px-5 py-10">
